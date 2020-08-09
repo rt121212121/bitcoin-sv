@@ -60,15 +60,15 @@ if(MSVC)
 
 	# Fix Cmake's default compiler options - see also https://gitlab.kitware.com/cmake/community/wikis/FAQ#dynamic-replace
 	# - remove default NDEBUG compile definition to solve #error "Bitcoin cannot be compiled without assertions"
-	# - use static runtime instead of dynamic runtime to match the external libraries  
+	# - use static runtime instead of dynamic runtime to match the external libraries
 	foreach(flag_var
 		CMAKE_CXX_FLAGS CMAKE_CXX_FLAGS_DEBUG CMAKE_CXX_FLAGS_RELEASE
 		CMAKE_CXX_FLAGS_MINSIZEREL CMAKE_CXX_FLAGS_RELWITHDEBINFO
 		CMAKE_C_FLAGS CMAKE_C_FLAGS_DEBUG CMAKE_C_FLAGS_RELEASE
 		CMAKE_C_FLAGS_MINSIZEREL CMAKE_C_FLAGS_RELWITHDEBINFO)
-		
+
 	if(${flag_var} MATCHES "/MD")
-			string(REGEX REPLACE "/MD" "/MT" ${flag_var} "${${flag_var}}")    
+			string(REGEX REPLACE "/MD" "/MT" ${flag_var} "${${flag_var}}")
 		endif()
 
 		if(${flag_var} MATCHES "/DNDEBUG")
@@ -140,13 +140,13 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
 	set(Boost_USE_STATIC_LIBS ON)
 	set(Boost_THREADAPI win32)
 
-	find_package(SHLWAPI REQUIRED)
-	target_link_libraries(util ${SHLWAPI_LIBRARY})
-	target_include_directories(util PUBLIC ${SHLWAPI_INCLUDE_DIR})
+	# find_package(SHLWAPI REQUIRED)
+	# target_link_libraries(util ${SHLWAPI_LIBRARY})
+	# target_include_directories(util PUBLIC ${SHLWAPI_INCLUDE_DIR})
 
 	find_library(WS2_32_LIBRARY NAMES ws2_32)
 	target_link_libraries(util ${WS2_32_LIBRARY})
-	
+
 	target_compile_definitions(util PUBLIC BOOST_THREAD_USE_LIB)
 endif()
 

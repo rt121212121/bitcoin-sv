@@ -82,9 +82,9 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
 			__USE_MINGW_ANSI_STDIO=1
 	)
 
-	find_package(SHLWAPI REQUIRED)
-	target_link_libraries(leveldb ${SHLWAPI_LIBRARY})
-	target_include_directories(leveldb PUBLIC ${SHLWAPI_INCLUDE_DIR})
+	# find_package(SHLWAPI REQUIRED)
+	# target_link_libraries(leveldb ${SHLWAPI_LIBRARY})
+	# target_include_directories(leveldb PUBLIC ${SHLWAPI_INCLUDE_DIR})
 else()
 	set(LEVELDB_PLATFORM POSIX)
 	target_sources(leveldb PRIVATE port/port_posix.cc)

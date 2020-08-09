@@ -13,10 +13,10 @@ find_library(SHLWAPI_LIBRARY NAMES shlwapi)
 
 message(STATUS "SHLWAPI lib: " ${SHLWAPI_LIBRARY})
 
-include(FindPackageHandleStandardArgs)
-find_package_handle_standard_args(GMP DEFAULT_MSG SHLWAPI_INCLUDE_DIR SHLWAPI_LIBRARY)
+# include(FindPackageHandleStandardArgs)
+# find_package_handle_standard_args(GMP DEFAULT_MSG SHLWAPI_INCLUDE_DIR SHLWAPI_LIBRARY)
 
 mark_as_advanced(SHLWAPI_INCLUDE_DIR SHLWAPI_LIBRARY)
 
-set(SHLWAPI_LIBRARIES ${SHLWAPI_LIBRARY})
-set(SHLWAPI_INCLUDE_DIRS ${SHLWAPI_INCLUDE_DIR})
+# set(SHLWAPI_LIBRARIES ${SHLWAPI_LIBRARY})
+# set(SHLWAPI_INCLUDE_DIRS ${SHLWAPI_INCLUDE_DIR})
