@@ -19,6 +19,12 @@
 #include <stdint.h>
 #include "leveldb/status.h"
 
+#if defined(LEVELDB_PLATFORM_WINDOWS)
+#if defined DeleteFile
+#undef DeleteFile
+#endif
+#endif
+
 namespace leveldb {
 
 class FileLock;
