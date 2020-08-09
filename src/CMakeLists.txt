@@ -147,6 +147,9 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
 	find_library(WS2_32_LIBRARY NAMES ws2_32)
 	target_link_libraries(util ${WS2_32_LIBRARY})
 
+	find_library(IPHLPAPI_LIBRARY NAMES iphlpapi)
+	target_link_libraries(util ${IPHLPAPI_LIBRARY})
+
 	target_compile_definitions(util PUBLIC BOOST_THREAD_USE_LIB)
 endif()
 
