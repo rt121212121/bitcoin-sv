@@ -144,8 +144,8 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
 	# target_link_libraries(util ${SHLWAPI_LIBRARY})
 	# target_include_directories(util PUBLIC ${SHLWAPI_INCLUDE_DIR})
 
-	find_library(WS2_32_LIBRARY NAMES ws2_32)
-	target_link_libraries(util ${WS2_32_LIBRARY})
+	# find_library(WS2_32_LIBRARY NAMES ws2_32)
+	# target_link_libraries(util ${WS2_32_LIBRARY})
 
 	target_compile_definitions(util PUBLIC BOOST_THREAD_USE_LIB)
 endif()
