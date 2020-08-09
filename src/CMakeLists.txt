@@ -139,7 +139,6 @@ target_include_directories(util
 if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
 	set(Boost_USE_STATIC_LIBS ON)
 	set(Boost_THREADAPI win32)
-	add_compile_definitions(BOOST_BIND_GLOBAL_PLACEHOLDERS)
 
 	# find_package(SHLWAPI REQUIRED)
 	# target_link_libraries(util ${SHLWAPI_LIBRARY})
